@@ -204,6 +204,24 @@
     .flower:nth-child(7){ left:90%; animation-delay:0.5s; animation-duration:7s; }
     .flower:nth-child(8){ left:100%; animation-delay:1s; animation-duration:6s; }
 
+    /* Floating Diyas at corners */
+    .diya {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: url('diya.png') no-repeat center center;
+      background-size: contain;
+      animation: floatDiya 4s ease-in-out infinite alternate;
+      z-index: 5;
+    }
+    .diya.left { bottom: 20px; left: 20px; }
+    .diya.right { bottom: 20px; right: 20px; }
+
+    @keyframes floatDiya {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-10px); }
+    }
+
     @keyframes fall {
       0% { transform: translate(0,0) rotate(0deg); opacity:0.9; }
       50% { transform: translate(-15px, 150px) rotate(180deg); opacity:0.7; }
@@ -246,6 +264,7 @@
       .contact-item{ font-size:13px; padding:8px 10px; gap:8px; }
       .icon{ width:20px; height:20px; }
       .subtitle{ font-size:clamp(12px,4vw,18px);}
+      .diya { width:30px; height:30px; }
     }
     @media (max-width:320px){
       .logo{ width:80px; height:80px; }
@@ -312,6 +331,10 @@
     </main>
 
     <footer>© मंडाळाचे सर्व अधिकृत पेज</footer>
+
+    <!-- Diyas -->
+    <div class="diya left"></div>
+    <div class="diya right"></div>
 
     <div class="flare" aria-hidden="true"></div>
 
